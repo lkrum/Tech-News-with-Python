@@ -31,11 +31,13 @@ db.commit()
 
 # insert comments
 db.add_all([
-  Comment(comment_text='Great job', user_id=3, post_id=2),
-  Comment(comment_text='ehh it was ok.', user_id=1, post_id=3),
-  Comment(comment_text='AMAZING', user_id=3, post_id=1),
-  Comment(comment_text='Insightful details. Never would have considered this', user_id=2, post_id=3),
-  Comment(comment_text='I liked it.', user_id=3, post_id=3)
+  Comment(comment_text='Thanks for the tips!', user_id=3, post_id=4),
+  Comment(comment_text='ehh it was ok.', user_id=2, post_id=2),
+  Comment(comment_text='So many creative uses!', user_id=4, post_id=1),
+  Comment(comment_text='Insightful details. Never would have considered this', user_id=2, post_id=5),
+  Comment(comment_text='Very useful!', user_id=3, post_id=3),
+  Comment(comment_text='You can certainly try, little brother', user_id=5, post_id=3),
+  Comment(comment_text='Maybe your just a bad teacher', user_id=1, post_id=5)
 ])
 
 db.commit()

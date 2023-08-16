@@ -19,14 +19,11 @@ def index():
 def login():
   return render_template('login.html')
 
-# @bp.route('/post/<id>')
-# def single(id):
-#   # get single post by id
-#   db = get_db()
-#   post = db.query(Post).filter(Post.id == id).one()
+@bp.route('/post/<id>')
+def single(id):
+  # get single post by id
+  db = get_db()
+  post = db.query(Post).filter(Post.id == id).one()
 
-#   # render single post template
-#   return render_template(
-#     'single-post.html',
-#     post=post
-#   )
+  # render single post template
+  return render_template('single-post.html', post=post)

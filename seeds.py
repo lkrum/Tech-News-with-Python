@@ -48,7 +48,8 @@ db.add_all([
   Vote(user_id=5, post_id=4),
   Vote(user_id=2, post_id=4),
   Vote(user_id=3, post_id=4),
-  Vote(user_id=4, post_id=2)
+  Vote(user_id=4, post_id=2),
+  Vote(user_id=5, post_id=3)
 ])
 
 db.commit()

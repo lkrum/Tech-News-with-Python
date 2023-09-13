@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify, session
 from app.models import User, Post, Comment, Vote
 from app.db import get_db
 import sys
+from app.utils.auth import login_required
 
 bp = Blueprint('api', __name__, url_prefix='/api')
 
@@ -67,6 +68,7 @@ def login():
 
 # add comment route
 @bp.route('/comments', methods=['POST'])
+@login_required
 def comment():
   data = request.get_json()
   db = get_db()
@@ -90,6 +92,7 @@ def comment():
 
 # upvote route
 @bp.route('/posts/upvote', methods=['PUT'])
+@login_required
 def upvote():
   data = request.get_json()
   db = get_db()
@@ -113,6 +116,7 @@ def upvote():
 
 # create post route
 @bp.route('/posts', methods=['POST'])
+@login_required
 def create():
   data = request.get_json()
   db = get_db()
@@ -137,6 +141,7 @@ def create():
 
 # update post by id route
 @bp.route('/posts/<id>', methods=['PUT'])
+@login_required
 def update(id):
   data = request.get_json()
   db = get_db()
@@ -156,6 +161,7 @@ def update(id):
 
 # delete post by id
 @bp.route('/posts/<id>', methods=['DELETE'])
+@login_required
 def delete(id):
   db = get_db()
 
